@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class JobTest {
-    //TODO: Create your unit tests here
 
     //test empty constructor
     @Test
@@ -16,7 +15,7 @@ public class JobTest {
         assertNotEquals(job1.getId(), job2.getId());
     }
 
-    //test full constructor
+    // test full constructor
 
     @Test
     public void testJobConstructorSetsAllFields() {
@@ -31,7 +30,7 @@ public class JobTest {
         assertTrue(testJob.getCoreCompetency() instanceof CoreCompetency);
     }
 
-    // test equals method;
+    // test equals method
     @Test
     public void testJobsForEquality() {
         Job job1 = new Job("Product tester", new Employer("ACME"),
@@ -44,16 +43,16 @@ public class JobTest {
         assertFalse(job1.equals(job2));
     }
 
-    //TODO test toString
+    // test toString - Task 5
 
     @Test
     public void testToStringStartsAndEndsWithNewLine() {
-        Job testJob = new Job("Product tester", new Employer("ACME"),
+        Job testJobI = new Job("Product tester I", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals(testJob.toString(), "\nID: 1\n" +
-                "Name: Product tester\n" +
+        assertEquals(testJobI.toString(), "\nID: " + testJobI.getId() +"\n" +
+                "Name: Product tester I\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
@@ -62,12 +61,12 @@ public class JobTest {
 
     @Test
     public void testToStringContainsCorrectLabelsAndData() {
-        Job testJob = new Job("Product tester", new Employer("ACME"),
+        Job testJobII = new Job("Product tester II", new Employer("ACME"),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency("Persistence"));
 
-        assertEquals(testJob.toString(), "\nID: 1\n" +
-                "Name: Product tester\n" +
+        assertEquals(testJobII.toString(), "\nID: " + testJobII.getId() +"\n" +
+                "Name: Product tester II\n" +
                 "Employer: ACME\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
@@ -76,12 +75,12 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job testJob = new Job("Product tester", new Employer(""),
+        Job testJobIII = new Job("Product tester III", new Employer(""),
                 new Location("Desert"), new PositionType("Quality control"),
                 new CoreCompetency(""));
 
-        assertEquals(testJob.toString(), "\nID: 1\n" +
-                "Name: Product tester\n" +
+        assertEquals(testJobIII.toString(), "\nID: " + testJobIII.getId() +"\n" +
+                "Name: Product tester III\n" +
                 "Employer: Data not available\n" +
                 "Location: Desert\n" +
                 "Position Type: Quality control\n" +
